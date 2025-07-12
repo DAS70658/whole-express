@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whole Express</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e7fce4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            padding: 1rem;
+            color: white;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+        }
+        .product {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .order-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>Whole Express - Order via WhatsApp</header>
+    <div class="product-list">
+        <div class="product">চাল<br><button class="order-btn" onclick="order('চাল')">Order</button></div>
+        <div class="product">আটা<br><button class="order-btn" onclick="order('আটা')">Order</button></div>
+        <div class="product">ময়দা<br><button class="order-btn" onclick="order('ময়দা')">Order</button></div>
+        <div class="product">ডাল<br><button class="order-btn" onclick="order('ডাল')">Order</button></div>
+        <div class="product">তেল<br><button class="order-btn" onclick="order('তেল')">Order</button></div>
+        <div class="product">চিনি<br><button class="order-btn" onclick="order('চিনি')">Order</button></div>
+        <div class="product">সাবান<br><button class="order-btn" onclick="order('সাবান')">Order</button></div>
+        <div class="product">শ্যাম্পু<br><button class="order-btn" onclick="order('শ্যাম্পু')">Order</button></div>
+        <div class="product">বিস্কুট<br><button class="order-btn" onclick="order('বিস্কুট')">Order</button></div>
+        <div class="product">চা<br><button class="order-btn" onclick="order('চা')">Order</button></div>
+        <!-- Add more products as needed -->
+    </div>
+    <footer>Contact us via WhatsApp: +91 8372933435</footer>
+
+    <script>
+        function order(item) {
+            const phone = '918372933435';
+            const message = `Hi, I want to order: ${item}`;
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
